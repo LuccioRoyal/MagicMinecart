@@ -6,8 +6,10 @@ public class MoveCamera : MonoBehaviour
 {
     public Transform target;
 
+
     private void Update()
     {
         transform.position = target.position;
     }
+
 }
