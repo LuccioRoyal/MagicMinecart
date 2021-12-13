@@ -9,7 +9,7 @@ public class MoveCamera : MonoBehaviour
 
     private void Update()
     {
-        transform.position = target.position;
+        transform.position = new Vector2(transform.position.x, target.position.y);
     }
 
 }

@@ -8,6 +8,8 @@ public class bulletBehavior : MonoBehaviour
     public Vector2 targetPosition;
     public Rigidbody2D rb;
 
+    public float bulletLifeSpan;
+
     private void Start()
     {
         rb.AddForce(transform.right * bulletSpeed,ForceMode2D.Impulse);
@@ -18,6 +20,8 @@ public class bulletBehavior : MonoBehaviour
     public void Update()
     {
         //transform.position = Vector2.MoveTowards(transform.position, targetPosition, bulletSpeed*Time.deltaTime);
-        
+
+        bulletLifeSpan -= Time.deltaTime;
+        if (bulletLifeSpan < 0) Destroy(gameObject);
     }
 }
